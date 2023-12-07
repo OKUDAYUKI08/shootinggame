@@ -1,19 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class timecountscript : MonoBehaviour
 {
     public float timer;
     public TextMeshProUGUI timeText;
+    public Animator myanim;
     // Start is called before the first frame update
-    void Start()
-    {
-        timer = 60;
-    }
+
 
     // Update is called once per frame
     void Update()
@@ -30,10 +26,10 @@ public class timecountscript : MonoBehaviour
             {
                 timer = 0;
                 timeText.text = timer.ToString("00.00");
-                SceneManager.LoadScene("result");
-
+                myanim.SetBool("down", true);
             }
         }
 
     }
+    
 }
