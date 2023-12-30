@@ -16,6 +16,7 @@ public class resultscript : MonoBehaviour
     int resultcount = 0;
     public TextMeshProUGUI buttontext;
     public Image buttonimage;
+    public AudioClip restartbuttonSE;
     // Start is called before the first frame update
 
     private void Start()
@@ -41,6 +42,7 @@ public class resultscript : MonoBehaviour
     }
     public void restartbutton()
     {
+        MusicManager.instance.SE(restartbuttonSE);
         myAnim.SetBool("restart", true);
     }
     public void LoadScene()

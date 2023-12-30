@@ -18,6 +18,7 @@ public class bulletganscript : MonoBehaviour
     public TextMeshProUGUI guncounttext;
     public TextMeshProUGUI gunalarm;
     public bool bulletcheck;
+    public AudioClip gunSE;
 
     private void Start()
     {
@@ -28,6 +29,7 @@ public class bulletganscript : MonoBehaviour
         //キースペースが押されたとき
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            MusicManager.instance.SE(gunSE);
                 //球が０より多いかつ球が破壊されたとき
                 if (shotcount > 0 && bulletcheck==true)
                 {

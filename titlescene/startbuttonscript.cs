@@ -6,21 +6,14 @@ public class startbuttonscript : MonoBehaviour
 {
     public Animator scene;
     public Animator white;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AudioClip buttonSE;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
+    //ƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½‚Æ‚«
     public void startbutton()
     {
         scene.SetBool("move", true);
+        MusicManager.instance.SE(buttonSE);
 
     }
 
