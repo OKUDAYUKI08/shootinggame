@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class peoplescript : MonoBehaviour
 {
+    //玉の発射スピード
     public float speed;
+    //カーソル移動の際の中心となるオブジェクト
     private GameObject face;
-    // Start is called before the first frame update
+
+    //オブジェクトの取得
     void Start()
     {
         face = transform.Find("face").gameObject;
@@ -16,12 +19,12 @@ public class peoplescript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // マウスの移動量を取得
         float mx = Input.GetAxis("Mouse X");
         float my = Input.GetAxis("Mouse Y");
-        //transform.position = new Vector3(Mathf.Clamp(transform.position.x + Input.GetAxis("Horizontal") * Time.deltaTime * speed, -20f, 20f), this.transform.position.y, this.transform.position.z);
-        // マウスの移動量を取得
-
-        //
+       
+    
+        //カーソルの向きの初期化
         if (Input.GetKeyDown(KeyCode.V))
         {
             this.gameObject.transform.eulerAngles = new Vector3(0, 0, 0);

@@ -5,17 +5,21 @@ using UnityEngine;
 
 public class Instantiatescript : MonoBehaviour
 {
+    //出現させる的オブジェクト
     public GameObject[] target;
+
     Vector3 targetplace;
+
     destoryscript destoryscript;
-    // Start is called before the first frame update
+
+    //的が配置されてるかの確認のため変数
+    public bool targetcheck = true;
     void Start()
     {
         //targetオブジェクト列にあるobjectをランダムに配置
         Instantiatetarget(target[Random.Range(0,target.Length)], this.gameObject);
     }
 
-    // Update is called once per frame
     void Update()
     {
         //target配置位置に物がないかつtargetが破壊されたのを確認後targetを再配置する
@@ -25,7 +29,6 @@ public class Instantiatescript : MonoBehaviour
             destoryscript.destroycheck = false;
         }
     }
-    public bool targetcheck = true;
 
     //targetが設置されたのを確認
     public void OnCollisionStay(Collision other)

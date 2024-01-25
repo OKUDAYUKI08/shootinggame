@@ -7,21 +7,27 @@ using TMPro;
 public class bulletganscript : MonoBehaviour
 {
 
-    // プレハブ弾オブジェクト
+    // 弾オブジェクト
     public GameObject bullet;
+
     // スピード
     public float speed;
 
+    //玉の残弾数
     public int shotcount;
 
-    
     public TextMeshProUGUI guncounttext;
+
     public TextMeshProUGUI gunalarm;
+
+    //玉が破壊されたのかの確認変数
     public bool bulletcheck;
+
     public AudioClip gunSE;
 
     private void Start()
     {
+        //初期化
         bulletcheck = true;
     }
     void Update()
@@ -39,6 +45,7 @@ public class bulletganscript : MonoBehaviour
                     //球が発射されたのを確認
                     bulletcheck = false;   
                 }
+                //玉がなくなった時
                 else if (shotcount <= 0)
                 {
                     guncounttext.text = "玉がありません";
@@ -47,7 +54,7 @@ public class bulletganscript : MonoBehaviour
         guncounttext.text = "残り弾数：" + shotcount.ToString() + "発";
     }
 
-    // 発射
+    // 玉の発射
     public void Shot()
     {
         // インスタンス生成

@@ -21,14 +21,17 @@ public class resultscript : MonoBehaviour
 
     private void Start()
     {
+        //’l‚Ì‰Šú‰»
         textup.text = "";
         textleft.text = "";
         targettext.text ="";
         buttontext.enabled = false;
         buttonimage.enabled = false;
     }
+
     void Update()
     {
+        //•–‹‚ªã‚ª‚Á‚½
         if (blackupcheck == true)
         {
             textup.text = "Œ‹‰Ê";

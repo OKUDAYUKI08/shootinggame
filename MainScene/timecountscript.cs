@@ -14,14 +14,17 @@ public class timecountscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //タイマーの開始の判断
         if(NovelWriter.gamestartcheck)
         {
+            //timeのカウント
             if (timer >= 0)
             {
                 timer -= Time.deltaTime;
                 timeText.text = timer.ToString("00.00");
             }
 
+            //制限時間が終了したときの処理
             if (timer < 0)
             {
                 timer = 0;

@@ -7,28 +7,38 @@ using TMPro;
 
 public class destoryscript : MonoBehaviour
 {
+    //倒した的の数
     public static int targetcout = 0;
+
+    //Groundオブジェクト(床)に触れた的を破壊したかどうかの確認
     public static bool destroycheck=false; 
+
+    //的につけているtag名
     public string[] tags;
+
     bulletganscript bulletgan;
+
     GameObject cameraobject;
+
     public TextMeshProUGUI targetcouttext;
-    // Start is called before the first frame update
+
+
     void Start()
     {
         //MainCameraのオブジェクトを取得
         cameraobject = GameObject.Find("Main Camera");
+
         //bulletscriptを取得
         bulletgan=cameraobject.GetComponent<bulletganscript>();
-        //targetの倒した数
+
+        //targetの倒した数の初期化
         targetcout = 0;
+
+        //倒した数をテキストに変換
         targetcouttext.text = "倒した数：" + targetcout.ToString();
     } 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+    //Groundオブジェクト(床)に接したオブジェクトに対する処理
     private void OnCollisionEnter(Collision other)
     {
         for(int i=0;i<tags.Length;i++)
@@ -51,15 +61,6 @@ public class destoryscript : MonoBehaviour
                 bulletgan.bulletcheck = true;
             }
         }
-        /*
-        //コインタグのついたオブジェクトを倒すと弾数が増える
-        if (other.gameObject.CompareTag("coin"))
-        {
-            bulletgan.shotcount += 2;
-            Debug.Log("OK");
-        }
-        */
-
 
     }
 

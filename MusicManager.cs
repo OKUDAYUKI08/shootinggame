@@ -24,24 +24,18 @@ public class MusicManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //objectのコンポーネントを取得
     private void Start()
     {
         audiosource = GetComponent<AudioSource>();
     }
+
+    //SEとしてのAudioClipの再生
     public void SE(AudioClip clip)
     {
         if(audiosource != null)
         {
             audiosource.PlayOneShot(clip);
-        }
-        else
-        {
-            Debug.Log("オーディオソースが設定されていません！");
         }
     }
 }

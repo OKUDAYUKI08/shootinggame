@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Security.Cryptography;
-/*
-* Unity で、1文字ずつ表示するためのコード
-*/
+
 public class NovelWriter : MonoBehaviour
 {
     public int key = 1;
@@ -56,18 +54,10 @@ public class NovelWriter : MonoBehaviour
             buttonimage.enabled = false;
 
         }
-
-
     }
     public void starttext()
     {
         write(0);
         white.enabled = false;
     }
-
-
-
-
-
-
 }
